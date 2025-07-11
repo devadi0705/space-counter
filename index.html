@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="ui">
+        <div>Score: <span id="score">0</span></div>
+        <div>Lives: <span id="lives">3</span></div>
+    </div>
+
+    <div class="game-over" id="gameOver" style="display: none;">
+        <div>GAME OVER</div>
+        <div style="font-size: 20px; margin-top: 20px;">Press R to Restart</div>
+    </div>
+
+    <div class="controls">
+        WASD or Arrow Keys: Move<br> SPACE: Shoot<br> R: Restart
+    </div>
+
+    <div id="touch-controls">
+        <button id="left" aria-label="Move Left">&#8592;</button>
+        <button id="right" aria-label="Move Right">&#8594;</button>
+        <button id="shoot" aria-label="Shoot">&#11014;</button>
+    </div>
+
+    <canvas id="gameCanvas" tabindex="0" aria-label="Space Shooter Game"></canvas>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

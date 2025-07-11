@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    /* Ensure canvas is also black */
+}
+
+.ui {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #000 !important;
+    color: #00ffff;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 28px;
+    z-index: 100;
+    padding: 12px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px #00ffff44, 0 0 32px #00ffff22;
+    text-shadow: 0 0 8px #00fff7, 0 0 16px #00fff7, 0 0 32px #00fff7, 0 0 64px #00fff7;
+    letter-spacing: 2px;
+}
+
+.controls {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #00eaff;
+    font-size: 1.3em;
+    z-index: 10;
+    text-shadow: 0 0 8px #000, 0 0 16px #00eaff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff2222;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 48px;
+    text-align: center;
+    z-index: 100;
+    text-shadow: 0 0 20px #ff2222, 0 0 40px #ff2222, 0 0 80px #ff2222;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #ff2222;
+    display: none;
+    animation: danger-blink 1s steps(2, start) infinite;
+}
+
+@keyframes danger-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+
+
+/* Touch controls: hidden by default, shown on touch devices */
+
+#touch-controls {
+    display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #touch-controls {
+        position: fixed;
+        bottom: 2vw;
+        left: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        z-index: 20;
+    }
+    #touch-controls button {
+        font-size: 2.5em;
+        padding: 1em 1.5em;
+        background: rgba(0, 0, 0, 0.7);
+        color: #0ff;
+        border: none;
+        border-radius: 1em;
+        box-shadow: 0 0 10px #0ff, 0 0 40px #0ff;
+        margin: 0 0.5em;
+        touch-action: manipulation;
+    }
+}
